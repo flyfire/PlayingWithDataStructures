@@ -18,7 +18,7 @@ public class SolarexLoopQueueTest {
 
         Random random = new Random();
         for (int i = 0; i < opCount; i++) {
-            queue.enqueue(random.nextInt());
+            queue.enqueue(random.nextInt(Integer.MAX_VALUE));
         }
         for (int i = 0; i < opCount; i++) {
             queue.dequeue();
