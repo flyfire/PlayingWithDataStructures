@@ -36,4 +36,12 @@ public class SolarexLinkedStack<E> implements Stack<E> {
     public E peek() {
         return linkedList.getFirst();
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Stack top ");
+        sb.append(linkedList);
+        return sb.toString();
+    }
 }

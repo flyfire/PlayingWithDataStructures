@@ -32,5 +32,20 @@ public class SolarexLinkedStackTest {
         System.out.println("ArrayStack cost " + testStack(arrayStack, op) + " s");
         SolarexLinkedStack<Integer> linkedStack = new SolarexLinkedStack<>();
         System.out.println("LinkedStack cost " + testStack(linkedStack, op) + " s");
+        /*
+        ArrayStack cost 0.083401358 s
+        LinkedStack cost 0.229727438 s
+         */
+    }
+
+    @Test
+    public void testLinkedStack() {
+        SolarexLinkedStack<Integer> linkedStack = new SolarexLinkedStack<>();
+        for (int i = 0; i < 5; i++) {
+            linkedStack.push(i);
+            System.out.print(linkedStack);
+        }
+        linkedStack.pop();
+        System.out.print(linkedStack);
     }
 }
