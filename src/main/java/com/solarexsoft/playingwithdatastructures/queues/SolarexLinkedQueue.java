@@ -21,6 +21,11 @@ public class SolarexLinkedQueue<E> implements Queue<E> {
         public Node() {
             this(null, null);
         }
+
+        @Override
+        public String toString() {
+            return e.toString();
+        }
     }
     Node<E> head,tail;
     int size;
@@ -49,13 +54,13 @@ public class SolarexLinkedQueue<E> implements Queue<E> {
     @Override
     public E dequeue() {
         if (isEmpty()) {
-            throw new IllegalArgumentException("cant dequeue from empty queue");
+            throw new IllegalArgumentException("cant dequeue from an empty queue");
         }
-        Node<E> retNode = head.next;
-        if (retNode == null) {
-            head = tail = null;
-        } else {
-            head = retNode;
+        Node<E> retNode = head;
+        head = retNode.next;
+        retNode.next = null;
+        if (head == null) {
+            tail = null;
         }
         size--;
         return retNode.e;
@@ -67,5 +72,18 @@ public class SolarexLinkedQueue<E> implements Queue<E> {
             throw new IllegalArgumentException("cant get from empty queue");
         }
         return head.e;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("LinkedQueue front: ");
+        Node<E> cur = head;
+        while (cur != null) {
+            sb.append(cur + " -> ");
+            cur = cur.next;
+        }
+        sb.append("null tail\n");
+        return sb.toString();
     }
 }

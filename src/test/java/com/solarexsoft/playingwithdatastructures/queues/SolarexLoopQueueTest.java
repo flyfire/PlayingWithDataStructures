@@ -36,5 +36,15 @@ public class SolarexLoopQueueTest {
         SolarexLoopQueue<Integer> loopQueue = new SolarexLoopQueue<>();
         double time2 = testQueue(loopQueue, opCount);
         System.out.println("loop queue cost " + time2 + " s");
+
+        SolarexLinkedQueue<Integer> linkedQueue = new SolarexLinkedQueue<>();
+        double time3 = testQueue(linkedQueue, opCount);
+        System.out.println("linked queue cost " + time3 + " s");
+
+        /*
+        array queue cost 3.841238056 s
+        loop queue cost 0.014679812 s
+        linked queue cost 0.016376352 s
+         */
     }
 }
