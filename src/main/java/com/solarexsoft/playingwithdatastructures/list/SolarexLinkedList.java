@@ -154,7 +154,7 @@ public class SolarexLinkedList<E> {
             sb.append(cur + "->");
             cur = cur.next;
         }
-        sb.append("null");
+        sb.append("null\n");
 
         return sb.toString();
     }
