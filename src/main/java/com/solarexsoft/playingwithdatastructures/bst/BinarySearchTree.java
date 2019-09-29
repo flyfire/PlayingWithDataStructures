@@ -207,9 +207,13 @@ public class BinarySearchTree<E extends Comparable<E>> {
         return node;
     }
 
+    public void remove(E e) {
+        root = remove(root, e);
+    }
+
     // 删除掉以node为根的二分搜索树中值为e的节点，递归算法
     // 返回删除节点后新的二分搜索树的根
-    private Node<E> remove(Node<E> node, E e) {
+    public Node<E> remove(Node<E> node, E e) {
         if (node == null) {
             return null;
         }
