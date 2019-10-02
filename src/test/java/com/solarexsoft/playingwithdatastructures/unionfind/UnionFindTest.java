@@ -45,8 +45,8 @@ public class UnionFindTest {
 
         System.out.println("----------------------------");
 
-        size = 10000000;
-        opCount = 10000000;
+//        size = 1000000;
+//        opCount = 1000000;
 
         UnionFindV3 uf3 = new UnionFindV3(size);
         System.out.println("V3 cost " + testUF(uf3, opCount) + " s");
@@ -56,5 +56,15 @@ public class UnionFindTest {
         System.out.println("V5 cost " + testUF(uf5, opCount) + " s");
         UnionFindV6 uf6 = new UnionFindV6(size);
         System.out.println("V6 cost " + testUF(uf6, opCount) + " s");
+
+        /*
+V1 cost 5.565910207 s
+V2 cost 11.70522334 s
+----------------------------
+V3 cost 10.984383699 s
+V4 cost 0.015694331 s
+V5 cost 0.014227241 s
+V6 cost 0.012842862 s
+         */
     }
 }
