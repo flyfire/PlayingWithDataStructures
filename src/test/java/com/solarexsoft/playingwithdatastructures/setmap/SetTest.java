@@ -48,6 +48,11 @@ public class SetTest {
         double bstPrideTime = testSet(new BSTSet<>(), pridePath);
         System.out.println("bst tale time = " + bstTaleTime + " s");
         System.out.println("bst pride time = " + bstPrideTime + " s");
+        System.out.println("test avlset");
+        double avlTalTime = testSet(new AVLSet<>(), talePath);
+        double avlPrideTime = testSet(new AVLSet<>(), pridePath);
+        System.out.println("avl tale time = " + avlTalTime + " s");
+        System.out.println("avl pride time = " + avlPrideTime + " s");
     }
 
 }

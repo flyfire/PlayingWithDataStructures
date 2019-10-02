@@ -43,5 +43,7 @@ public class MapTest {
         System.out.println("link map time = " + linkMapTime + " s");
         double bstMapTime = testMap(new BSTMap<>(), pridePath);
         System.out.println("bst map time = " + bstMapTime + " s");
+        double avlMapTime = testMap(new AVLMap<>(), pridePath);
+        System.out.println("avl map time = " + avlMapTime + " s");
     }
 }
