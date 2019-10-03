@@ -6,4 +6,5 @@ package com.solarexsoft.playingwithdatastructures.segmenttree;
  */
 public interface Merger<E> {
     E merge(E a, E b);
+    E index2Element(int start);
 }
