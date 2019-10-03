@@ -1,5 +1,6 @@
 package com.solarexsoft.playingwithdatastructures.setmap;
 
+import com.solarexsoft.playingwithdatastructures.hashtable.SolarexHashTable;
 import com.solarexsoft.playingwithdatastructures.redblack.RedBlackTree;
 import com.solarexsoft.playingwithdatastructures.utils.FileOperation;
 import org.junit.Test;
@@ -50,6 +51,8 @@ public class MapTest {
         System.out.println("avl map time = " + avlMapTime + " s");
         double redblackTreeTime = testMap(new RedBlackTree<>(), pridePath);
         System.out.println("red black tree time = " + redblackTreeTime + " s");
+        double hashTableTime = testMap(new SolarexHashTable<>(), pridePath);
+        System.out.println("hash table time = " + hashTableTime + " s");
 /*
 pride path = /Users/houruhou/icarbonx-android/learning/1DataStructureAndAlgorithms/PlayingWithDataStructures/out/production/resources/pride-and-prejudice.txt
 /Users/houruhou/icarbonx-android/learning/1DataStructureAndAlgorithms/PlayingWithDataStructures/out/production/resources/pride-and-prejudice.txt
@@ -76,6 +79,12 @@ map size = 6530
 frequency of pride = 53
 frequency of prejudice = 11
 red black tree time = 0.076720912 s
+/Users/houruhou/icarbonx-android/learning/1DataStructureAndAlgorithms/PlayingWithDataStructures/out/production/resources/pride-and-prejudice.txt
+words total size = 125901
+map size = 6530
+frequency of pride = 53
+frequency of prejudice = 11
+hash table time = 0.057215081 s
  */
     }
 
