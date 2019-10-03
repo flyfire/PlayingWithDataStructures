@@ -5,6 +5,8 @@ import com.solarexsoft.playingwithdatastructures.utils.FileOperation;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 import static org.junit.Assert.*;
 
@@ -75,5 +77,68 @@ frequency of pride = 53
 frequency of prejudice = 11
 red black tree time = 0.076720912 s
  */
+    }
+
+    private double testAdd(Map<Integer, Integer> map, List<Integer> list) {
+        long start = System.nanoTime();
+        for (Integer integer : list) {
+            map.add(integer, null);
+        }
+        long end = System.nanoTime();
+        return (end - start)/1000000000.0;
+    }
+    @Test
+    public void testMapAdd1() {
+        Random random = new Random();
+        int opCount = 20000000;
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < opCount; i++) {
+            list.add(random.nextInt(Integer.MAX_VALUE));
+        }
+        System.out.println("test bst");
+        double bsttime = testAdd(new BSTMap<>(), list);
+        System.out.println("bst cost time " + bsttime + " s");
+        System.out.println("test avl");
+        double avltime = testAdd(new AVLMap<>(), list);
+        System.out.println("avl cost time " + avltime + " s");
+        System.out.println("test redblack tree");
+        double rbTime = testAdd(new RedBlackTree<>(), list);
+        System.out.println("red black tree cost " + rbTime + " s");
+/*
+test bst
+bst cost time 43.48906742 s
+test avl
+avl cost time 41.543432488 s
+test redblack tree
+red black tree cost 44.366516662 s
+*/
+    }
+
+    @Test
+    public void testMapAdd2() {
+        int opCount = 20000000;
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < opCount; i++) {
+            list.add(i);
+        }
+        /*
+        System.out.println("test bst");
+        double bsttime = testAdd(new BSTMap<>(), list);
+        System.out.println("bst cost time " + bsttime + " s");
+        // stackoverflowerror
+        */
+        System.out.println("test avl");
+        double avltime = testAdd(new AVLMap<>(), list);
+        System.out.println("avl cost time " + avltime + " s");
+        System.out.println("test redblack tree");
+        double rbTime = testAdd(new RedBlackTree<>(), list);
+        System.out.println("red black tree cost " + rbTime + " s");
+/*
+test avl
+avl cost time 11.204869597 s
+test redblack tree
+red black tree cost 11.096205332 s
+ */
+
     }
 }
