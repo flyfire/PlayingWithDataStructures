@@ -1,5 +1,6 @@
 package com.solarexsoft.playingwithdatastructures.setmap;
 
+import com.solarexsoft.playingwithdatastructures.redblack.RedBlackTree;
 import com.solarexsoft.playingwithdatastructures.utils.FileOperation;
 import org.junit.Test;
 
@@ -45,5 +46,34 @@ public class MapTest {
         System.out.println("bst map time = " + bstMapTime + " s");
         double avlMapTime = testMap(new AVLMap<>(), pridePath);
         System.out.println("avl map time = " + avlMapTime + " s");
+        double redblackTreeTime = testMap(new RedBlackTree<>(), pridePath);
+        System.out.println("red black tree time = " + redblackTreeTime + " s");
+/*
+pride path = /Users/houruhou/icarbonx-android/learning/1DataStructureAndAlgorithms/PlayingWithDataStructures/out/production/resources/pride-and-prejudice.txt
+/Users/houruhou/icarbonx-android/learning/1DataStructureAndAlgorithms/PlayingWithDataStructures/out/production/resources/pride-and-prejudice.txt
+words total size = 125901
+map size = 6530
+frequency of pride = 53
+frequency of prejudice = 11
+link map time = 13.033911656 s
+/Users/houruhou/icarbonx-android/learning/1DataStructureAndAlgorithms/PlayingWithDataStructures/out/production/resources/pride-and-prejudice.txt
+words total size = 125901
+map size = 6530
+frequency of pride = 53
+frequency of prejudice = 11
+bst map time = 0.102633211 s
+/Users/houruhou/icarbonx-android/learning/1DataStructureAndAlgorithms/PlayingWithDataStructures/out/production/resources/pride-and-prejudice.txt
+words total size = 125901
+map size = 6530
+frequency of pride = 53
+frequency of prejudice = 11
+avl map time = 0.113605382 s
+/Users/houruhou/icarbonx-android/learning/1DataStructureAndAlgorithms/PlayingWithDataStructures/out/production/resources/pride-and-prejudice.txt
+words total size = 125901
+map size = 6530
+frequency of pride = 53
+frequency of prejudice = 11
+red black tree time = 0.076720912 s
+ */
     }
 }
