@@ -7,7 +7,8 @@ package com.solarexsoft.sortingalgorithms;
 public class QuickSort extends SortingAlgorithms {
     @Override
     void sort(int[] arr, int start, int end) {
-        lomutoSort(arr, start, end - 1);
+//        lomutoSort(arr, start, end - 1);
+        hoareSort(arr, start, end - 1);
     }
 
     private int lomutoParation(int arr[],int low, int high) {
