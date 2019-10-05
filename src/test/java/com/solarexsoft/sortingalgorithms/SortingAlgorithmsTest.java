@@ -50,8 +50,13 @@ public class SortingAlgorithmsTest {
         double shakerSortTime = testAlgorithms(new ShakerSort(), arr);
         System.out.println("shaker sort cost " + shakerSortTime);
         */
+        /*
         System.out.println("test shell sort");
         double shellSortTime = testAlgorithms(new ShellSort(), arr);
         System.out.println("shell sort cost " + shellSortTime);
+        */
+        System.out.println("test quick sort");
+        double quickSortTime = testAlgorithms(new QuickSort(), arr);
+        System.out.println("quick sort cost " + quickSortTime);
     }
 }
