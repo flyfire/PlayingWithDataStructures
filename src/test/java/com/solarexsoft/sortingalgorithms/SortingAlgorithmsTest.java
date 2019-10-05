@@ -35,8 +35,13 @@ public class SortingAlgorithmsTest {
         double bubbleSortTime = testAlgorithms(new BubbleSort(), arr);
         System.out.println("bubble srot cost " + bubbleSortTime);
         */
+        /*
         System.out.println("test insert sort");
         double insertSortTime = testAlgorithms(new InsertSort(), arr);
         System.out.println("insert sort cost " + insertSortTime);
+        */
+        System.out.println("test selection sort");
+        double selectionSortTime = testAlgorithms(new SelectionSort(), arr);
+        System.out.println("selection sort cost " + selectionSortTime);
     }
 }
