@@ -10,7 +10,7 @@ public class InsertSort extends SortingAlgorithms {
         for (int i = start + 1; i < end; i++) {
             int tmp = arr[i];
             int j = i;
-            for (; j - 1 >= start && arr[j-1] > tmp; j--) {
+            for (; j - 1 >= start && arr[j-1] > tmp; j--) { // 记得终止条件
                 swap(arr, j, j - 1);
             }
             if (j != i) {

@@ -11,7 +11,7 @@ public class BubbleSort extends SortingAlgorithms {
         boolean isSwaped;
         for (int i = start; i < end; i++) {
             isSwaped = false;
-            for (int j = start; j+1<n-i; j++) {
+            for (int j = start; j+1<n-i; j++) { // 下标
                 if (arr[j] > arr[j+1]) {
                     swap(arr, j, j+1);
                     isSwaped = true;
