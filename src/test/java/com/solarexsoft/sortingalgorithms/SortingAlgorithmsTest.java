@@ -30,8 +30,13 @@ public class SortingAlgorithmsTest {
         for (int i = 0; i < opCount; i++) {
             arr[i] = random.nextInt(Integer.MAX_VALUE);
         }
+        /*
         System.out.println("test bubble sort");
         double bubbleSortTime = testAlgorithms(new BubbleSort(), arr);
         System.out.println("bubble srot cost " + bubbleSortTime);
+        */
+        System.out.println("test insert sort");
+        double insertSortTime = testAlgorithms(new InsertSort(), arr);
+        System.out.println("insert sort cost " + insertSortTime);
     }
 }
