@@ -8,13 +8,13 @@ public class SelectionSort extends SortingAlgorithms {
     @Override
     void sort(int[] arr, int start, int end) {
         for (int i = start; i < end; i++) {
-            int cur = arr[i];
+            int min = arr[i];
             int j = i+1;
             int minIndex = i;
             for (; j < end; j++) {
-                if (arr[j] < cur) {
+                if (arr[j] < min) {
                     minIndex = j;
-                    cur = arr[j];
+                    min = arr[j]; // 记得更新最小值
                 }
             }
             if (minIndex != i) {
