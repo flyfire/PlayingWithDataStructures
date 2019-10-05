@@ -60,8 +60,13 @@ public class SortingAlgorithmsTest {
         double quickSortTime = testAlgorithms(new QuickSort(), arr);
         System.out.println("quick sort cost " + quickSortTime);
         */
+        /*
         System.out.println("test merge sort");
         double mergeSortTime = testAlgorithms(new MergeSort(), arr);
         System.out.println("merge sort cost " + mergeSortTime);
+        */
+        System.out.println("test heap sort");
+        double heapSortTime = testAlgorithms(new HeapSort(), arr);
+        System.out.println("heap sort cost " + heapSortTime);
     }
 }
