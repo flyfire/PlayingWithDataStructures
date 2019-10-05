@@ -55,8 +55,13 @@ public class SortingAlgorithmsTest {
         double shellSortTime = testAlgorithms(new ShellSort(), arr);
         System.out.println("shell sort cost " + shellSortTime);
         */
+        /*
         System.out.println("test quick sort");
         double quickSortTime = testAlgorithms(new QuickSort(), arr);
         System.out.println("quick sort cost " + quickSortTime);
+        */
+        System.out.println("test merge sort");
+        double mergeSortTime = testAlgorithms(new MergeSort(), arr);
+        System.out.println("merge sort cost " + mergeSortTime);
     }
 }
