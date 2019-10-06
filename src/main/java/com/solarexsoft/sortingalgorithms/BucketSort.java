@@ -10,7 +10,7 @@ import java.util.List;
 public class BucketSort extends SortingAlgorithms {
     @Override
     void sort(int[] arr, int start, int end) {
-
+        bucketSort(arr, start, end, 10);
     }
 
     // 对分布均匀的数字排序算法比较有效
