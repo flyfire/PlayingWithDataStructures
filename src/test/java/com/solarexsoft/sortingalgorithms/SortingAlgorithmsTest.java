@@ -65,8 +65,16 @@ public class SortingAlgorithmsTest {
         double mergeSortTime = testAlgorithms(new MergeSort(), arr);
         System.out.println("merge sort cost " + mergeSortTime);
         */
+        /*
         System.out.println("test heap sort");
         double heapSortTime = testAlgorithms(new HeapSort(), arr);
         System.out.println("heap sort cost " + heapSortTime);
+        */
+        /*
+        System.out.println("test counting sort");
+        double countingSortTime = testAlgorithms(new CountingSort(), arr);
+        System.out.println("counting sort cost " + countingSortTime);
+        OOM
+        */
     }
 }
