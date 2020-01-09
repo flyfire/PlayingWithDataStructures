@@ -43,9 +43,25 @@ public class TreeNodeTraversal {
         System.out.println("\n------------------");
         int[] pre = {1, 2,  4,	8,	9,	5,	10,	11,	3,	6,	12,	13,	7,	14,	15};
         int[] in = {8,	4,	9,	2,	10,	5,	11,	1,	12,	6,	13,	3,	14,	7,	15};
-        TreeNode root = buildTree(pre, in);
+        int[] post = {8,	9,	4,	10,	11,	5,	2,	12,	13,	6,	14,	15,	7,	3,	1};
+        TreeNode root = buildTreePre(pre, in);
+        preOrder(root);
+        System.out.println("\n------------------");
+        inOrder(root);
+        System.out.println("\n------------------");
+        postOrder(root);
+        System.out.println("\n------------------");
         levelOrder(root);
-
+        System.out.println("\n------------------");
+        TreeNode tmp = buildTreePost(post, in);
+        preOrder(tmp);
+        System.out.println("\n------------------");
+        inOrder(tmp);
+        System.out.println("\n------------------");
+        postOrder(tmp);
+        System.out.println("\n------------------");
+        levelOrder(tmp);
+        System.out.println("\n------------------");
     }
 
     static void preOrder(TreeNode root) {
@@ -92,23 +108,42 @@ public class TreeNodeTraversal {
         }
     }
 
-    static TreeNode buildTree(int[] pre, int[] in) {
+    static TreeNode buildTreePre(int[] pre, int[] in) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < in.length; i++) {
             map.put(in[i], i);
         }
-        return buildTree(pre, 0, pre.length-1, 0, map);
+        return buildTreeWithPre(pre, 0, pre.length-1, 0, map);
     }
 
-    static TreeNode buildTree(int[] pre, int preStart, int preEnd, int inStart, Map<Integer, Integer> inPos) {
+    static TreeNode buildTreePost(int[] post, int[] in) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < in.length; i++) {
+            map.put(in[i], i);
+        }
+        return buildTreeWithPost(post, 0, post.length - 1, 0, map);
+    }
+
+    static TreeNode buildTreeWithPre(int[] pre, int preStart, int preEnd, int inStart, Map<Integer, Integer> inPos) {
         if (preStart > preEnd) {
             return null;
         }
         TreeNode root = new TreeNode(pre[preStart]);
         int rootIndex = inPos.get(pre[preStart]);
         int leftLen = rootIndex - inStart;
-        root.left = buildTree(pre, preStart + 1, preStart + leftLen, inStart, inPos);
-        root.right = buildTree(pre, preStart+leftLen+1, preEnd, rootIndex + 1, inPos);
+        root.left = buildTreeWithPre(pre, preStart + 1, preStart + leftLen, inStart, inPos);
+        root.right = buildTreeWithPre(pre, preStart+leftLen+1, preEnd, rootIndex + 1, inPos);
+        return root;
+    }
+    static TreeNode buildTreeWithPost(int[] post, int postStart, int postEnd, int inStart, Map<Integer, Integer> inPos) {
+        if (postStart > postEnd) {
+            return null;
+        }
+        TreeNode root = new TreeNode(post[postEnd]);
+        int rootIndex = inPos.get(post[postEnd]);
+        int leftLen = rootIndex - inStart;
+        root.left = buildTreeWithPost(post, postStart, postStart + leftLen - 1, inStart, inPos);
+        root.right = buildTreeWithPost(post, postStart + leftLen, postEnd-1, rootIndex + 1, inPos);
         return root;
     }
 }
